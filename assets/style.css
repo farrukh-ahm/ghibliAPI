@@ -100,8 +100,7 @@ h1,h2,h3,h4,h5,h6{
     gap: var(--gap);
     inline-size: 80vw;
     margin: 10rem auto;
-
-    background-color: yellowgreen;
+    /* background-color: yellowgreen; */
 }
 
 @media (min-width: 500px){
@@ -125,6 +124,7 @@ h1,h2,h3,h4,h5,h6{
     justify-content: center;
     margin: auto;
     border: 1px solid black;
+    border-radius: 5px;
     text-align: center;
 }
 
@@ -132,4 +132,9 @@ img{
     block-size: 15em;
     inline-size: 12em;
     margin: 5px auto;
+    border-radius: 5px;
+}
+
+.cardContainer p {
+    margin-block: 0.25em;
 }

@@ -1,7 +1,18 @@
 
-document.addEventListener("DOMContentLoaded", ()=>{
-    getMovies()
-})
+// document.addEventListener("DOMContentLoaded", ()=>{
+//     getMovies()
+// })
+
+const container = document.querySelector("#container")
+const button = document.querySelectorAll(".btn")
+
+button.forEach(btn => {
+    btn.addEventListener("click", (e)=>{
+        const category = e.target.getAttribute("data-category")
+        console.log(category)
+        category==="movies"? getMovies():category==="characters"?getCharacters():getSongs()
+    })
+});
 
 const getMovies = async()=>{
     const response = await fetch("https://ghibliapi.vercel.app/films/")
@@ -15,10 +26,24 @@ const getMovies = async()=>{
     }
 }
 
-const container = document.querySelector("#container")
+const getCharacters = async()=>{
+    const response = await fetch("https://ghibliapi.vercel.app/people/");
+    const data = await response.json()
+    if(response.ok){
+        console.log(data)
+    }
+}
+
+
+const getSongs = async()=>{
+
+}
+
+
 
 const movieHandler = data => {
 
+    container.innerHTML = "";
     const cards = data.map(item=>{
         return( `<div class="cardContainer"> 
                 <h2>${item.title}</h2>
@@ -34,3 +59,4 @@ const movieHandler = data => {
     }
 
 }
+
