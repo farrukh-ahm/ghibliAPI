@@ -28,7 +28,7 @@ h1,h2,h3,h4,h5,h6{
     top: 25%;
     left: 50%;
     transform: translateX(-50%);
-    border: 1px blue solid;
+    /* border: 1px blue solid; */
     border-radius: 5px;
     /* background-color: red; */
 }
@@ -46,27 +46,47 @@ h1,h2,h3,h4,h5,h6{
     position: absolute;
     top: 0%;
     text-align: center;
+    z-index: 5;
+    /* background-color: blueviolet; */
+}
+.link{
+    block-size: 100%;
+    inline-size: 100%;
+    position: absolute;
+    border-radius: 5px;
+    padding-block: 1em;
+    /* top: 0%; */
+    text-align: center;
     background-color: blueviolet;
+    transition: all 0.5s ease-in;
+    cursor: pointer;
 }
 
 .links-container:nth-of-type(1){
     left: 0;
 }
-.links-container:nth-of-type(1):hover{
-    left: -50px;
+.links-container:nth-of-type(1):hover > .link{
+    left: -20px;
+    background-color: red;
 }
 .links-container:nth-of-type(2){
     left: 50%;
     transform: translateX(-50%);
 }
-.links-container:nth-of-type(2):hover{
-    top: -50px;
+.links-container:nth-of-type(2):hover> .link{
+    top: -20px;
+    background-color: red;
     /* left: 50%;
     transform: translateX(-50%); */
 }
 .links-container:nth-of-type(3){
     right: 0px;
 }
-.links-container:nth-of-type(3):hover{
-    right: -50px;
+.links-container:nth-of-type(3):hover> .link{
+    right: -20px;
+    background-color: red;
 }
+
+/* .btn:hover{
+    background-color: red;
+} */
