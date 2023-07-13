@@ -15,7 +15,7 @@ button.forEach(btn => {
 });
 
 const getMovies = async()=>{
-    const response = await fetch("https://ghibliapi.vercel.app/films/")
+    const response = await fetch("https://ghibliapi.vercel.app/films")
     const data = await response.json()
     if(response.ok){
         console.log(data)
@@ -31,6 +31,7 @@ const getCharacters = async()=>{
     const data = await response.json()
     if(response.ok){
         console.log(data)
+        characterHandler(data)
     }
 }
 
@@ -60,3 +61,22 @@ const movieHandler = data => {
 
 }
 
+const characterHandler = data =>{
+
+    container.innerHTML = "";
+    const cards = data.map(item=>{
+        console.log(item.name.toLowerCase().replace(" ","-"))
+        return( `<div class="cardContainer"> 
+                <h2>${item.name}</h2>
+                <img src="./assets/images/${item.name.toLowerCase().replaceAll(" ","-")}.webp" alt="${item.name}" />
+                <p>Gender: ${item.gender}</p>
+                <p>Age: ${item.age}</p>
+                <p>Eye Color: ${item.eye_color}</p>
+                <p>Hair Color: ${item.hair_color}</p>
+            </div>`)
+    })
+
+    for(let i of cards){
+        container.insertAdjacentHTML('beforeend', i)
+    }
+}

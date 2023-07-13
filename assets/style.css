@@ -9,6 +9,14 @@ h1,h2,h3,h4,h5,h6{
     text-wrap: balance;
 }
 
+html, body{
+    inline-size: 100vw;
+}
+
+body{
+    overflow-x: hidden;
+}
+
 .header{
     inline-size: 100vw;
     block-size: 9.5rem;
@@ -29,6 +37,7 @@ h1,h2,h3,h4,h5,h6{
     left: 50%;
     transform: translateX(-50%);
     margin-block-end: 1rem;
+    margin-block-start: 3rem;
     /* border: 1px blue solid; */
     border-radius: 5px;
     background-color: red;
