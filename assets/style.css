@@ -28,12 +28,17 @@ h1{
 
 h2{
     font-family: var(--card-title);
-    color: var(--banner-color)
+    color: var(--banner-color);
+    padding-block-start: 0.15em;
 }
 
 h3,h4,h5,h6{
     font-family: var(--text);
     color: var(--banner-color);
+}
+
+h4{
+    padding-block: 0.15em;
 }
 
 html, body{
@@ -169,7 +174,7 @@ body{
 }
 
 .cardContainer{
-    block-size: 25em;
+    min-block-size: 25.5em;
     inline-size: 20em;
     display: flex;
     flex-direction: column;
@@ -188,5 +193,9 @@ img{
 }
 
 .cardContainer p {
-    margin-block: 0.10em;
+    margin-block: 0.15em;
+}
+
+p:last-of-type{
+    padding-block-end: 0.25em;
 }
