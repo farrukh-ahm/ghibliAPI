@@ -68,20 +68,27 @@ body{
     /* top: 0%; */
     text-align: center;
     background-color: blueviolet;
-    transition: all 0.5s ease-in;
+    transition: all 0.25s ease-in;
     cursor: pointer;
 }
 
 .links-container:nth-of-type(1){
     left: 0;
 }
+.links-container:nth-of-type(1) > .link{
+    left: 0;
+}
 .links-container:nth-of-type(1):hover > .link{
     left: -20px;
     background-color: red;
 }
+
 .links-container:nth-of-type(2){
     left: 50%;
     transform: translateX(-50%);
+}
+.links-container:nth-of-type(2) > .link{
+    top: 0%;
 }
 .links-container:nth-of-type(2):hover> .link{
     top: -20px;
@@ -89,7 +96,11 @@ body{
     /* left: 50%;
     transform: translateX(-50%); */
 }
+
 .links-container:nth-of-type(3){
+    right: 0px;
+}
+.links-container:nth-of-type(3) > .link{
     right: 0px;
 }
 .links-container:nth-of-type(3):hover> .link{
