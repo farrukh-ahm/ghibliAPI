@@ -1,12 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Handjet:wght@300;500&family=Lugrasimo&family=Roboto:wght@100;300;400&display=swap');
+
 *, *::before, *::after{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
+:root {
+    --head: 'Handjet', cursive;
+    --card-title: 'Lugrasimo', cursive;
+    --text: 'Roboto', sans-serif;
+    --banner-color: #302e50;
+    --body-color: #cfc8f4;
+    --title-color: #f9f871;
+    --links-color: #fffade;
+}
+
 h1,h2,h3,h4,h5,h6{
-    color: red;
     text-wrap: balance;
+}
+
+h1{
+    font-family: var(--head);
+    font-weight: 700;
+    color: var(--title-color);
+}
+
+h2{
+    font-family: var(--card-title);
+    color: var(--banner-color)
+}
+
+h3,h4,h5,h6{
+    font-family: var(--text);
+    color: var(--banner-color);
 }
 
 html, body{
@@ -15,6 +42,9 @@ html, body{
 
 body{
     overflow-x: hidden;
+    font-family: var(--text);
+    font-weight: 200;
+    background-color: var(--body-color);
 }
 
 .header{
@@ -22,7 +52,7 @@ body{
     block-size: 9.5rem;
     text-align: center;
     padding-block-start: 2.5em;
-    background-color: black;
+    background-color: var(--banner-color);
 }
 
 .title{
@@ -31,7 +61,7 @@ body{
 
 .nav{
     block-size: 4rem;
-    inline-size: 15rem;
+    inline-size: 16rem;
     position: absolute;
     top: 25%;
     left: 50%;
@@ -40,7 +70,6 @@ body{
     margin-block-start: 3rem;
     /* border: 1px blue solid; */
     border-radius: 5px;
-    background-color: red;
 }
 
 .wrapper{
@@ -64,11 +93,11 @@ body{
     inline-size: 100%;
     position: absolute;
     border-radius: 5px;
-    padding-block: 1em;
+    padding-block: 1.25em;
     /* top: 0%; */
     text-align: center;
-    background-color: blueviolet;
-    transition: all 0.25s ease-in;
+    background-color: var(--links-color);
+    transition: all 0.45s ease-in;
     cursor: pointer;
 }
 
@@ -80,7 +109,8 @@ body{
 }
 .links-container:nth-of-type(1):hover > .link{
     left: -20px;
-    background-color: red;
+    background-color: inherit;
+    border: 1px solid var(--links-color)
 }
 
 .links-container:nth-of-type(2){
@@ -92,7 +122,8 @@ body{
 }
 .links-container:nth-of-type(2):hover> .link{
     top: -20px;
-    background-color: red;
+    background-color: inherit;
+    border: 1px solid var(--links-color)
     /* left: 50%;
     transform: translateX(-50%); */
 }
@@ -105,7 +136,8 @@ body{
 }
 .links-container:nth-of-type(3):hover> .link{
     right: -20px;
-    background-color: red;
+    background-color: inherit;
+    border: 1px solid var(--links-color)
 }
 
 /* .btn:hover{
@@ -156,5 +188,5 @@ img{
 }
 
 .cardContainer p {
-    margin-block: 0.25em;
+    margin-block: 0.10em;
 }

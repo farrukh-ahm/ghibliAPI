@@ -5,6 +5,7 @@
 
 const container = document.querySelector("#container")
 const button = document.querySelectorAll(".btn")
+const body = document.getElementsByTagName("body")
 
 button.forEach(btn => {
     btn.addEventListener("click", (e)=>{
@@ -44,6 +45,8 @@ const getSongs = async()=>{
 
 const movieHandler = data => {
 
+    // document.body.style.backgroundColor = "red";
+    document.body.style.backgroundImage = "linear-gradient(to bottom, #d3b4f4, #d9b4f4, #dfb4f3, #e5b5f2, #ebb5f1, #f6b7e5, #fdbbda, #ffc0d2, #ffcdc7, #ffddc5, #ffeece, #f8fde0)";
     container.innerHTML = "";
     const cards = data.map(item=>{
         return( `<div class="cardContainer"> 
@@ -63,6 +66,7 @@ const movieHandler = data => {
 
 const characterHandler = data =>{
 
+    document.body.style.backgroundImage = "linear-gradient(to bottom, #d3b4f4, #d9b4f4, #dfb4f3, #e5b5f2, #ebb5f1, #f6b7e5, #fdbbda, #ffc0d2, #ffcdc7, #ffddc5, #ffeece, #f8fde0)";
     container.innerHTML = "";
     const cards = data.map(item=>{
         console.log(item.name.toLowerCase().replace(" ","-"))
