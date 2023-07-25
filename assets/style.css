@@ -183,6 +183,21 @@ body{
     border: 1px solid black;
     border-radius: 5px;
     text-align: center;
+    animation: appear 1s ease-in forwards;
+}
+
+@keyframes appear {
+
+    0% {
+        opacity: 0;
+        transform: translateX(-3em);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
 }
 
 img{

@@ -11,7 +11,7 @@ button.forEach(btn => {
     btn.addEventListener("click", (e)=>{
         const category = e.target.getAttribute("data-category")
         console.log(category)
-        category==="movies"? getMovies():category==="characters"?getCharacters():getSongs()
+        category==="movies"? getMovies():category==="characters"?getCharacters():getPlaces()
     })
 });
 
@@ -28,7 +28,7 @@ const getMovies = async()=>{
 }
 
 const getCharacters = async()=>{
-    const response = await fetch("https://ghibliapi.vercel.app/people/");
+    const response = await fetch("https://ghibliapi.vercel.app/people");
     const data = await response.json()
     if(response.ok){
         console.log(data)
@@ -37,8 +37,12 @@ const getCharacters = async()=>{
 }
 
 
-const getSongs = async()=>{
-
+const getPlaces = async()=>{
+    const response = await fetch("https://ghibliapi.vercel.app/locations");
+    const data = await response.json()
+    if(response.ok){
+        console.log(data)
+    }
 }
 
 
