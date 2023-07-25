@@ -41,7 +41,8 @@ const getPlaces = async()=>{
     const response = await fetch("https://ghibliapi.vercel.app/locations");
     const data = await response.json()
     if(response.ok){
-        console.log(data)
+        // console.log(data)
+        placesHandler(data)
     }
 }
 
@@ -82,6 +83,29 @@ const characterHandler = data =>{
                 <p>Eye Color: ${item.eye_color}</p>
                 <p>Hair Color: ${item.hair_color}</p>
             </div>`)
+    })
+
+    for(let i of cards){
+        container.insertAdjacentHTML('beforeend', i)
+    }
+}
+
+
+const placesHandler = data => {
+
+    document.body.style.backgroundImage = "linear-gradient(to bottom, #d3b4f4, #d9b4f4, #dfb4f3, #e5b5f2, #ebb5f1, #f6b7e5, #fdbbda, #ffc0d2, #ffcdc7, #ffddc5, #ffeece, #f8fde0)";
+    container.innerHTML = "";
+    const cards = data.map(item => {
+        console.log(item.name.toLowerCase().replaceAll(" ","-").replaceAll(".",""))
+        return(
+            `<div class="cardContainer"> 
+                <h2>${item.name}</h2>
+                <img src="./assets/images/locations/${item.name.toLowerCase().replaceAll(" ","-").replaceAll(".","")}.webp" alt="${item.name}" />
+                <p>Terrain: ${item.terrain}</p>
+                <p>Climate: ${item.climate}</p>
+                <p>Surface Water: ${item.surface_water}</p>
+            </div>`
+        )
     })
 
     for(let i of cards){
